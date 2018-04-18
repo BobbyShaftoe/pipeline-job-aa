@@ -1,5 +1,5 @@
 
-node master {
+node {
     stage('Environemnt') {
        sh 'scripts/env.sh' 
             
