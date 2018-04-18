@@ -1,5 +1,10 @@
 
 node {
+    stage('List files in workspace') {
+      sh 'ls -larst .'
+      sh 'ls -la */*'
+    }
+
     stage('Environemnt') {
        sh 'scripts/env.sh' 
             
