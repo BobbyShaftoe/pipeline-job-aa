@@ -1,5 +1,5 @@
 
-node ('master) '{
+node ('master') {
     stage('Checkout main repository') {
       git poll: false, url: 'https://github.com/BobbyShaftoe/pipeline-job-aa.git'
     }
