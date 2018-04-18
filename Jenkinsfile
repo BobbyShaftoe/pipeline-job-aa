@@ -1,5 +1,5 @@
 
-node {
+node ('master) '{
     stage('Checkout main repository') {
       git poll: false, url: 'https://github.com/BobbyShaftoe/pipeline-job-aa.git'
     }
@@ -9,7 +9,7 @@ node {
       sh 'ls -la */*'
     }
 
-    stage('Environemnt') {
+    stage('Environment') {
        sh 'scripts/env.sh' 
             
     }
