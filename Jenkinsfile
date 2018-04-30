@@ -1,5 +1,5 @@
 @Library("PipelineLibrary") _
-import org.aws.getAWSDetails
+import import org.aws.*
 
     setupCheck {
 }
