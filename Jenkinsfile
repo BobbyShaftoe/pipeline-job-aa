@@ -13,7 +13,7 @@ pipeline {
   stages {
 
     stage('Run the env script') {
-      sh "python scripts/env_info_helper.py env_var HOME"
+      sh 'python scripts/env_info_helper.py env_var HOME'
     }
 
     stage('Generate AWS VARS from meta-data') {
