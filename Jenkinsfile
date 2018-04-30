@@ -1,5 +1,5 @@
 @Library("PipelineLibrary") _
-import import org.aws.*
+import import org.aws.*;
 
     setupCheck {
 }
