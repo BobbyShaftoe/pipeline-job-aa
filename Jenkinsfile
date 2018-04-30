@@ -1,10 +1,10 @@
 @Library("PipelineLibrary") _
-import import org.aws.*;
-
     setupCheck {
 }
 
 pipeline {
+  import import org.aws.*
+
   agent any
 
   environment {
