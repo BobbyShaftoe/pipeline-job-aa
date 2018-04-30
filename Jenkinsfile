@@ -3,8 +3,6 @@
 }
 
 pipeline {
-  import import org.aws.*
-
   agent any
 
   environment {
