@@ -2,7 +2,7 @@
   setupCheck {
 }
 
-buildInfo.libinfo
+buildInfo()
 
 
 
