@@ -1,9 +1,11 @@
 @Library("PipelineLibrary") _
+  buildInfo {
+}
+
 //  setupCheck {
 //}
 
-  buildInfo {
-}
+
 
 
 
