@@ -4,34 +4,32 @@
 
 
 node('aws-node-00') {
+  ansiColor('xterm') {
+      environment {
+        JOB_DEFINITION = 'Test'
+      }
 
-  environment {
-    JOB_DEFINITION = 'Test'
-  }
+      try {
 
-  try {
+      stage('Run the env script') {
+        sh 'python scripts/env_info_helper.py env_var HOME'
+      }
 
-  stage('Run the env script') {
-    sh 'python scripts/env_info_helper.py env_var HOME'
-  }
-
-  stage('Generate AWS VARS from meta-data') {
-    awsDetails = getAWSDetails()
-    AZ = awsDetails['az']
-    REGION = awsDetails['region']
-    ACCOUNT = awsDetails['account']
-    ECR = awsDetails['ecr']
-    CLI_IMAGE = "${ECR}/${REPO_NAMESPACE}/cli:latest"
-
-    sh "env"
-  }
+      stage('Generate AWS VARS from meta-data') {
+        awsDetails = getAWSDetails()
+        AZ = awsDetails['az']
+        REGION = awsDetails['region']
+        ACCOUNT = awsDetails['account']
+        sh "env"
+      }
 
 
 
 
-  } catch (err) {
-    currentBuild.result = 'FAILED'
-    throw err
+      } catch (err) {
+        currentBuild.result = 'FAILED'
+        throw err
+      }
   }
 }
 
