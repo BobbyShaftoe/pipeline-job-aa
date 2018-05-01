@@ -2,9 +2,9 @@
     setupCheck {
 }
 
-buildInfo{
+buildInfo()
 
-}
+
 
 
 node('aws-node-00') {
