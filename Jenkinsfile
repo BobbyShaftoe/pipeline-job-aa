@@ -18,6 +18,7 @@ node('aws-node-00') {
   try {
 
   stage('Run the env script') {
+    buildInfo()
     sh 'python scripts/env_info_helper.py env_var HOME'
   }
 
