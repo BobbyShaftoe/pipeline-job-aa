@@ -20,7 +20,9 @@ node('aws-node-00') {
         AZ = awsDetails['az']
         REGION = awsDetails['region']
         ACCOUNT = awsDetails['account']
-        sh "env"
+        sh "echo AZ: $AZ"
+        sh "echo REGION: $REGION"
+        sh "echo ACCOUNT: $ACCOUNT"
       }
 
 
