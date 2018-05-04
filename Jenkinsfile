@@ -1,6 +1,6 @@
 @Library("PipelineLibrary") _
 
-checkoutVars = checkoutRepo {
+def checkoutVars = checkoutRepo {
 }
   setupCheck {
 }
