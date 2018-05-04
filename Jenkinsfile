@@ -1,6 +1,10 @@
 @Library("PipelineLibrary") _
+
+checkoutVars = checkoutRepo {
+}
   setupCheck {
 }
+
 
 
 node('aws-node-00') {
@@ -24,9 +28,6 @@ node('aws-node-00') {
         sh "echo REGION: $REGION"
         sh "echo ACCOUNT: $ACCOUNT"
       }
-
-
-
 
       } catch (err) {
         currentBuild.result = 'FAILED'
