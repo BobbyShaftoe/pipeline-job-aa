@@ -1,11 +1,13 @@
 @Library("PipelineLibrary") _
 
-checkoutRepo{
+node('aws-node-00') {
+  stage('Retrieve scm vars') {
+    def checkoutVars = checkout scm
+  }
 }
 
-  setupCheck {
+setupCheck {
 }
-
 
 
 node('aws-node-00') {
