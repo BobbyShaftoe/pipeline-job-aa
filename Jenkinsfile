@@ -1,7 +1,5 @@
 @Library("PipelineLibrary") _
 
-def checkoutVars = checkoutRepo()
-
   setupCheck {
 }
 
@@ -14,6 +12,10 @@ node('aws-node-00') {
       }
 
       try {
+
+     stage('Checkout source'){
+       def checkoutVars = checkoutRepo()
+     }
 
       stage('Run the env script') {
         sh 'python scripts/env_info_helper.py env_var HOME'
