@@ -14,6 +14,11 @@ node('aws-node-00') {
   stage('Checkout scm'){
     checkout scm
   }
+
+  stage('Checkout ansible repo') {
+    checkoutRepo("https://github.com/BobbyShaftoe/server-bootstraps-ansible.git")
+  }
+
 }
 
 
