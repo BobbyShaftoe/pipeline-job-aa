@@ -4,6 +4,10 @@ node('aws-node-00') {
   stage('Retrieve scm vars') {
     def checkoutVars = checkout scm
     def commit_id = checkoutVars.GIT_COMMIT
+    echo commit_id
+  }
+  stage('Checkout scm'){
+    checkout scm
   }
 }
 
