@@ -3,7 +3,7 @@
 node('aws-node-00') {
   stage('Retrieve scm vars') {
     def checkoutVars = checkout scm
-    echo checkoutVars
+    //echo checkoutVars
   }
 }
 
