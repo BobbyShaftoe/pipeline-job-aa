@@ -3,9 +3,18 @@
 node('aws-node-00') {
   stage('Retrieve scm vars') {
     def checkoutVars = checkout scm
-    //echo checkoutVars
+    def commit_id = checkoutVars.GIT_COMMIT
   }
 }
+
+//message={GIT_BRANCH=origin/master
+// GIT_COMMIT=9662771cb3c37c7d8586500fac4e0f58d5b10514
+// GIT_LOCAL_BRANCH=master
+// GIT_PREVIOUS_COMMIT=e71c0191e6bf071f6f910e963b143ae635c94928
+// GIT_PREVIOUS_SUCCESSFUL_COMMIT=f76fcbc7c585d76fe897d1e7da8153bf7041753b
+// GIT_URL=https://github.com/BobbyShaftoe/pipeline-job-aa.git
+
+
 
 setupCheck {
 }
