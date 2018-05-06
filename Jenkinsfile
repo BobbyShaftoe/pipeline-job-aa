@@ -1,6 +1,7 @@
 @Library("PipelineLibrary") _
 
 env.JOB_NODE_NAME = 'aws-node-00'
+env.THIS_WORKSPACE = env.WORKSPACE
 
 node('aws-node-00') {
     stage('Retrieve scm vars') {
