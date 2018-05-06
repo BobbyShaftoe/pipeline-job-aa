@@ -10,26 +10,30 @@ node('aws-node-00') {
 }
 
 
-
 node('aws-node-00') {
-    stage('Retrieve scm vars') {
-        def checkoutVars = checkout scm
-        def commit_id = checkoutVars.GIT_COMMIT
-        env.GIT_COMMIT = checkoutVars.GIT_COMMIT
-        env.GIT_BRANCH = checkoutVars.GIT_BRANCH
-        env.GIT_LOCAL_BRANCH = checkoutVars.GIT_LOCAL_BRANCH
-        env.GIT_PREVIOUS_COMMIT = checkoutVars.GIT_PREVIOUS_COMMIT
-        env.GIT_URL = checkoutVars.GIT_URL
-    }
 
-    stage('Checkout scm') {
-        checkout scm
-    }
+    ws("$env.THIS_WORKSPACE") {
 
-    stage('Checkout ansible repo') {
-        checkoutRepo('https://github.com/BobbyShaftoe/server-bootstraps-ansible.git')
+        stage('Retrieve scm vars') {
+            def checkoutVars = checkout scm
+            def commit_id = checkoutVars.GIT_COMMIT
+            env.GIT_COMMIT = checkoutVars.GIT_COMMIT
+            env.GIT_BRANCH = checkoutVars.GIT_BRANCH
+            env.GIT_LOCAL_BRANCH = checkoutVars.GIT_LOCAL_BRANCH
+            env.GIT_PREVIOUS_COMMIT = checkoutVars.GIT_PREVIOUS_COMMIT
+            env.GIT_URL = checkoutVars.GIT_URL
+        }
+
+        stage('Checkout scm') {
+            checkout scm
+        }
+
+        stage('Checkout ansible repo') {
+            checkoutRepo('https://github.com/BobbyShaftoe/server-bootstraps-ansible.git')
+        }
     }
 }
+
 
 setupCheck {}
 
