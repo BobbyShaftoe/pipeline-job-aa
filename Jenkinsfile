@@ -1,5 +1,7 @@
 @Library("PipelineLibrary") _
 
+env.JOB_NODE_NAME = 'aws-node-00'
+
 node('aws-node-00') {
   stage('Retrieve scm vars') {
     def checkoutVars = checkout scm
@@ -16,15 +18,12 @@ node('aws-node-00') {
   }
 
   stage('Checkout ansible repo') {
-    checkoutRepo("https://github.com/BobbyShaftoe/server-bootstraps-ansible.git")
+    checkoutRepo("aws-node-00", "https://github.com/BobbyShaftoe/server-bootstraps-ansible.git")
   }
-
 }
-
 
 setupCheck {
 }
-
 
 node('aws-node-00') {
   ansiColor('xterm') {
