@@ -2,6 +2,15 @@
 
 env.JOB_NODE_NAME = 'aws-node-00'
 
+
+node('aws-node-00') {
+    stage('Set default workspace') {
+        env.THIS_WORKSPACE = env.WORKSPACE
+    }
+}
+
+
+
 node('aws-node-00') {
     stage('Retrieve scm vars') {
         def checkoutVars = checkout scm
@@ -18,7 +27,6 @@ node('aws-node-00') {
     }
 
     stage('Checkout ansible repo') {
-        env.THIS_WORKSPACE = env.WORKSPACE
         checkoutRepo('https://github.com/BobbyShaftoe/server-bootstraps-ansible.git')
     }
 }
