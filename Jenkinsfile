@@ -18,7 +18,7 @@ node('aws-node-00') {
   }
 
   stage('Checkout ansible repo') {
-    checkoutRepo("aws-node-00", "https://github.com/BobbyShaftoe/server-bootstraps-ansible.git")
+    checkoutRepo('https://github.com/BobbyShaftoe/server-bootstraps-ansible.git')
   }
 }
 
