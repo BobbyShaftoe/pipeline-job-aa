@@ -1,7 +1,6 @@
 @Library("PipelineLibrary") _
 
 env.JOB_NODE_NAME = 'aws-node-00'
-env.THIS_WORKSPACE = env.WORKSPACE
 
 node('aws-node-00') {
     stage('Retrieve scm vars') {
@@ -19,6 +18,7 @@ node('aws-node-00') {
     }
 
     stage('Checkout ansible repo') {
+        env.THIS_WORKSPACE = env.WORKSPACE
         checkoutRepo('https://github.com/BobbyShaftoe/server-bootstraps-ansible.git')
     }
 }
