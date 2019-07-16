@@ -7,6 +7,9 @@ env.JOB_NODE_NAME = 'aws-node-00'
 
 node('aws-node-00') {
     ansiColor('xterm') {
+        environment {
+            JOB_DEFINITION = 'Test'
+        }
 
         ws("$env.THIS_WORKSPACE") {
 
