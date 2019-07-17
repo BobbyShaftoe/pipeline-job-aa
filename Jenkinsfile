@@ -10,6 +10,7 @@ node('aws-node-00') {
         environment {
             JOB_DEFINITION = 'Test'
         }
+        WORKSPACE = pwd()
 
         ws("$env.THIS_WORKSPACE") {
 
@@ -17,6 +18,7 @@ node('aws-node-00') {
             stage('Set default workspace') {
                 echo "THIS WORKSPACE"
                 echo "${WORKSPACE}"
+
             }
 
 
