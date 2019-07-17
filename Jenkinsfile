@@ -37,6 +37,11 @@ node('aws-node-00') {
 
             stage('Setup Check') {
                 setupCheck {}
+
+            }
+
+            stage('directory listing') {
+                sh 'ls -l ${WORKSPACE}'
             }
 
 
