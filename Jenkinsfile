@@ -13,8 +13,7 @@ node('aws-node-00') {
             stage('Set default workspace') {
                 echo "WORKSPACE"
                 echo "${WORKSPACE}"
-                echo "JOB_DEFINITION"
-                echo "${JOB_DEFINITION}"
+
             }
 
 
