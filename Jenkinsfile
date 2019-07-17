@@ -16,10 +16,10 @@ node('aws-node-00') {
 
             stage('Set default workspace') {
                 echo "THIS WORKSPACE"
-                echo env.THIS_WORKSPACE
-                echo "WORKSPACE"
-                echo env.WORKSPACE
+                echo ${THIS_WORKSPACE}
             }
+                echo ${WORKSPACE}
+
             stage('Retrieve scm vars') {
                 def checkoutVars = checkout scm
                 def commit_id = checkoutVars.GIT_COMMIT
