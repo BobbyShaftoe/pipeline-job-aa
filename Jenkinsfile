@@ -16,9 +16,9 @@ node('aws-node-00') {
 
             stage('Set default workspace') {
                 echo "THIS WORKSPACE"
-                echo ${THIS_WORKSPACE}
+                echo THIS_WORKSPACE
             }
-                echo ${WORKSPACE}
+
 
             stage('Retrieve scm vars') {
                 def checkoutVars = checkout scm
