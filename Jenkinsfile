@@ -12,13 +12,11 @@ node('aws-node-00') {
         }
         WORKSPACE = pwd()
 
-        ws("$env.THIS_WORKSPACE") {
-
-
             stage('Set default workspace') {
-                echo "THIS WORKSPACE"
+                echo "WORKSPACE"
                 echo "${WORKSPACE}"
-
+                echo "JOB_DEFINITION"
+                echo "${JOB_DEFINITION}"
             }
 
 
@@ -44,7 +42,7 @@ node('aws-node-00') {
                 setupCheck {}
             }
 
-        }
+
     }
 }
 
