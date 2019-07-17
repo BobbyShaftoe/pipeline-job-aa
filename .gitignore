@@ -73,3 +73,7 @@ ansible/tests/*
 
 # Symlink to ansible/ansible.cfg
 ./ansible.cfg
+
+# Groovy pipeline config
+pipeline.gdsl
+
