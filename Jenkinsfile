@@ -13,7 +13,6 @@ node('aws-node-00') {
             stage('Set default workspace') {
                 echo "WORKSPACE"
                 echo "${WORKSPACE}"
-
             }
 
 
@@ -27,9 +26,6 @@ node('aws-node-00') {
                 env.GIT_URL = checkoutVars.GIT_URL
             }
 
-            stage('Checkout scm') {
-                checkout scm
-            }
 
             stage('Checkout ansible repo') {
                 checkoutRepo('https://github.com/BobbyShaftoe/server-bootstraps-ansible.git')
